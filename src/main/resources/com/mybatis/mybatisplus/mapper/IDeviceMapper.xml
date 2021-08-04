@@ -5,7 +5,7 @@
 <mapper namespace="com.mybatis.mybatisplus.mapper.IDeviceMapper">
 
         <select id="selectAllByUserId" resultType="com.mybatis.mybatisplus.pojo.Device" >
-            SELECT d.device_id,d.device_name,d.device_status,d.device_type,d.site_id
+            SELECT d.device_id,d.device_name,d.device_status,d.device_type,d.site_id,s.site_name
              FROM
              tb_device d INNER JOIN tb_site s
              ON d.site_id = s.site_id

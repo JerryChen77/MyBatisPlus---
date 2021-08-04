@@ -2,6 +2,7 @@ package com.mybatis.mybatisplus.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.mybatis.mybatisplus.mapper.IUserMapper;
+import com.mybatis.mybatisplus.pojo.Site;
 import com.mybatis.mybatisplus.pojo.User;
 import com.mybatis.mybatisplus.service.UserService;
 import com.mybatis.mybatisplus.vo.ResultVO;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Cjl
@@ -22,6 +24,15 @@ public class UserServiceImpl implements UserService {
     IUserMapper userMapper;
     @Autowired
     ResultVO resultVO;
+
+    @Override
+    public ResultVO selectAll() {
+        ResultVO resultVO = new ResultVO();
+        List<User> users = userMapper.selectList(null);
+        resultVO.setSuccess(true);
+        resultVO.setData(users);
+        return resultVO;
+    }
 
     @Override
     public Integer save(User user) {

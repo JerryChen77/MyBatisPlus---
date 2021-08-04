@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
@@ -28,6 +29,7 @@ public class UserController  {
     UserService userService;
     @PostMapping("/login")
     public ResultVO login(@RequestBody User user){
+
         try {
             User loginUser = null;
             ResultVO resultVO = userService.login(user.getUserName(), user.getPassword());
@@ -41,21 +43,14 @@ public class UserController  {
             e.printStackTrace();
             return ResultVO.error("登录失败", "当前登录人数过多，请稍后再试！");
         }
-//        HashMap map = new HashMap();
-//        map.put("token","admin");
-//        return ResultVO.ok("成功",map);
-
     }
 
-//    @GetMapping("/info")
-//    public ResultVO info(){
-//        HashMap map = new HashMap();
-//        map.put("roles","[admin]");
-//        map.put("name","admin");
-//        map.put("avatar","https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif");
-//        return ResultVO.ok("success",map);
-//
-//    }
+
+    @RequestMapping("/users")
+    public ResultVO selectAll(){
+        ResultVO resultVO = userService.selectAll();
+        return resultVO;
+    }
 
 
 

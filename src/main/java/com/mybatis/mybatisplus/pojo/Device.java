@@ -1,6 +1,7 @@
 package com.mybatis.mybatisplus.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,8 @@ public class Device {
     private String deviceType;
     private Integer siteId;
 
+    @TableField(exist = false)
+    private String siteName;
 
 
 

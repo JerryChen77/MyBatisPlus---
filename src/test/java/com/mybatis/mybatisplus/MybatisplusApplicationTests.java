@@ -3,14 +3,22 @@ package com.mybatis.mybatisplus;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+//import com.github.pagehelper.PageInfo;
 import com.mybatis.mybatisplus.mapper.IDeviceMapper;
+import com.mybatis.mybatisplus.mapper.ISiteMapper;
 import com.mybatis.mybatisplus.mapper.IUserMapper;
 import com.mybatis.mybatisplus.pojo.Device;
+import com.mybatis.mybatisplus.pojo.Site;
 import com.mybatis.mybatisplus.pojo.User;
+import com.mybatis.mybatisplus.service.DeviceService;
+import com.mybatis.mybatisplus.service.SiteService;
+import com.mybatis.mybatisplus.service.UserService;
+import com.mybatis.mybatisplus.vo.ResultVO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -18,12 +26,34 @@ public class MybatisplusApplicationTests {
     @Autowired
     IUserMapper userMapper;
     @Autowired
+    ISiteMapper siteMapper;
+    @Autowired
     IDeviceMapper deviceMapper;
+    @Autowired
+    SiteService siteService;
+    @Autowired
+    UserService userService;
+    @Autowired
+    DeviceService deviceService;
+
+
+    @Test
+    public void test01() {
+        Site site = siteMapper.selectById(1);
+        System.out.println("site = " + site);
+
+        ResultVO resultVO = siteService.selectBySiteId(1);
+        Site data = (Site) resultVO.getData();
+        System.out.println("data = " + data);
+    }
+
+
     @Test
     public void test0() {
-        List<Device> devices = deviceMapper.selectAllByUserId(1);
-        for (Device device : devices) {
-            System.out.println("device = " + device);
+        ResultVO resultVO = userService.selectAll();
+        List<User> users = (List<User>) resultVO.getData();
+        for (User user : users) {
+            System.out.println("user = " + user);
         }
     }
 
@@ -65,8 +95,19 @@ public class MybatisplusApplicationTests {
 
 
     }
+//    @Test
+//    public void test05(){
+//        ResultVO resultVO = deviceService.findAllByUserId(1, 1, 3);
+//        PageInfo pageInfo = (PageInfo) resultVO.getData();
+//        System.out.println(pageInfo);
+//
+//    }
+
+
     @Test
-    public void test05(){
+    public void test06(){
+        List<Device> devices = deviceMapper.selectAllByUserId(2);
+        System.out.println(devices);
 
     }
 }

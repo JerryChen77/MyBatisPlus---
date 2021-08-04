@@ -1,6 +1,7 @@
 package com.mybatis.mybatisplus.service;
 
 import com.mybatis.mybatisplus.pojo.Device;
+import com.mybatis.mybatisplus.vo.ResultVO;
 
 import java.util.List;
 
@@ -10,6 +11,6 @@ import java.util.List;
  */
 public interface DeviceService {
 
-    List<Device> findAllByUserId(Integer userId);
+    ResultVO findAllByUserId(Integer userId);
 
 }

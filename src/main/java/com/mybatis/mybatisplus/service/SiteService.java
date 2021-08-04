@@ -9,12 +9,16 @@ import com.mybatis.mybatisplus.vo.ResultVO;
  */
 public interface SiteService {
 
-   ResultVO selectByUserId(Integer userId);
+   ResultVO selectByUserId(Integer userId,Integer pageNum,Integer pageSize);
 
-   Integer DeleteById(Integer siteId);
+   ResultVO selectBySiteId(Integer siteId);
 
-   Integer insert(Site site);
+   ResultVO selectAll();
 
-   Integer update(Site site);
+   ResultVO deleteById(Integer siteId);
+
+   ResultVO insert(Site site);
+
+   ResultVO update(Site site);
 
 }

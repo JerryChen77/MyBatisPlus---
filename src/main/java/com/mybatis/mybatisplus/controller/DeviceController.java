@@ -25,8 +25,7 @@ public class DeviceController {
 
     @RequestMapping("/devices/{userId}")
     public ResultVO findAll(@PathVariable("userId") Integer userId){
-
-        List<Device> allByUserId = deviceService.findAllByUserId(userId);
-        return ResultVO.ok("查询成功",allByUserId);
+        ResultVO resultVO = deviceService.findAllByUserId(userId);
+        return resultVO;
     }
 }

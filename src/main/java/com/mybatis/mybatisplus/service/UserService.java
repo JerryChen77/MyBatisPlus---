@@ -9,6 +9,8 @@ import com.mybatis.mybatisplus.vo.ResultVO;
  */
 public interface UserService {
 
+    ResultVO selectAll();
+
     Integer save(User user);
 
     ResultVO login(String username, String password);
