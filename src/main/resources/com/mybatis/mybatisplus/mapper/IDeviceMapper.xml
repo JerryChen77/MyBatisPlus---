@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.mybatisplus.mapper.IDeviceMapper">
+
+        <select id="selectAllByUserId" resultType="com.mybatis.mybatisplus.pojo.Device" >
+            SELECT d.device_id,d.device_name,d.device_status,d.device_type,d.site_id
+             FROM
+             tb_device d INNER JOIN tb_site s
+             ON d.site_id = s.site_id
+            INNER JOIN tb_user u
+            ON s.user_id = u.user_id
+            WHERE u.user_id = #{userId}
+        </select>
+
+
+
+        </mapper>
