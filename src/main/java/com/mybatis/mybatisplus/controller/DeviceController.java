@@ -22,7 +22,7 @@ public class DeviceController {
 
     @Autowired
     DeviceService deviceService;
-
+    //查询
     @RequestMapping("/devices/{userId}")
     public ResultVO findAll(@PathVariable("userId") Integer userId){
         ResultVO resultVO = deviceService.findAllByUserId(userId);
