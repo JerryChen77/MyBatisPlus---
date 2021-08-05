@@ -35,7 +35,4 @@ public class Site {
     @TableField(select = false)
     private String deviceType;
 
-
-
-
 }

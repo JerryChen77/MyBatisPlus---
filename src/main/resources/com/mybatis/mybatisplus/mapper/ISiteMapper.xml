@@ -4,15 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mybatis.mybatisplus.mapper.ISiteMapper">
 
-<!--        <select id="selectAllByUserId" resultType="com.mybatis.mybatisplus.pojo.Device" >-->
-<!--            SELECT d.device_id,d.device_name,d.device_status,d.device_type,d.site_id,s.site_name-->
-<!--             FROM-->
-<!--             tb_device d INNER JOIN tb_site s-->
-<!--             ON d.site_id = s.site_id-->
-<!--            INNER JOIN tb_user u-->
-<!--            ON s.user_id = u.user_id-->
-<!--            WHERE u.user_id = #{userId}-->
-<!--        </select>-->
+<!--	查询功能：site表与device表联查，多个模糊查询字段	-->
         <select id="search" resultType="com.mybatis.mybatisplus.pojo.Site">
                 SELECT
 	                s.site_id,

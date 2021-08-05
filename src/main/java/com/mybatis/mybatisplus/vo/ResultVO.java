@@ -2,10 +2,11 @@ package com.mybatis.mybatisplus.vo;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;
-
 import java.io.Serializable;
 
-
+/**
+ * 结果集，实现Serializable接口，用于网络传输，到前端页面
+ */
 @Data
 @Component
 public class ResultVO implements Serializable {

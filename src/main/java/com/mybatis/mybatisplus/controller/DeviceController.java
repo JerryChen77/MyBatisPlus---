@@ -45,12 +45,13 @@ public class DeviceController {
         return resultVO;
     }
 
+    //增加设备
     @PostMapping("/add")
     public ResultVO add(@RequestBody Device device){
         ResultVO resultVO = deviceService.add(device);
         return  resultVO;
     }
-
+    //删除设备
     @DeleteMapping("/devices/{deviceId}")
     public ResultVO delete(@PathVariable("deviceId") Integer deviceId){
         ResultVO resultVO = deviceService.delete(deviceId);

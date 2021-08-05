@@ -2,7 +2,6 @@ package com.mybatis.mybatisplus.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.mybatis.mybatisplus.pojo.Device;
-import com.mybatis.mybatisplus.pojo.Site;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

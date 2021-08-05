@@ -97,14 +97,11 @@ public class SiteServiceImpl implements SiteService {
         resultVO.setMessage("修改成功");
         return resultVO;
     }
-
+        //模糊查询所用方法
     @Override
     public ResultVO search(String name) {
         ResultVO resultVO = new ResultVO();
         List<Site> sites = siteMapper.search(name);
-        for (Site site : sites) {
-            System.out.println("site = " + site);
-        }
         resultVO.setSuccess(true);
         resultVO.setMessage("搜索成功");
         resultVO.setData(sites);

@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+//扫描Mapper
 @MapperScan(basePackages = {"com.mybatis.mybatisplus.mapper"})
 public class MybatisplusApplication {
 

@@ -33,12 +33,6 @@ public class DeviceServiceImpl implements DeviceService {
         resultVO.setMessage("查询成功");
         resultVO.setSuccess(true);
         resultVO.setData(devices);
-//        PageHelper.startPage(pageNum,pageSize);
-//        List<Device> devices = deviceMapper.selectAllByUserId(userId);
-//        PageInfo pageInfo = new PageInfo(devices);
-//        resultVO.setMessage("查询成功");
-//        resultVO.setSuccess(true);
-//        resultVO.setData(pageInfo);
         return resultVO;
     }
 

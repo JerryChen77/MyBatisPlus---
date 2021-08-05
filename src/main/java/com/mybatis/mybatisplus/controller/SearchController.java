@@ -23,7 +23,7 @@ public class SearchController {
     @Autowired
     SiteService siteService;
 
-
+    //模糊查询
     @RequestMapping("/s/{name}")
     public ResultVO search(@PathVariable("name") String name){
         ResultVO resultVO = siteService.search(name);
