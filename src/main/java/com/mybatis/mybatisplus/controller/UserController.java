@@ -45,7 +45,7 @@ public class UserController  {
         }
     }
 
-
+    //查询所有用户
     @RequestMapping("/users")
     public ResultVO selectAll(){
         ResultVO resultVO = userService.selectAll();
@@ -53,7 +53,7 @@ public class UserController  {
     }
 
 
-
+    //注册功能，未使用
     @PostMapping("/users")
     public ResultVO register(@RequestBody User user, HttpServletResponse response){
         ResultVO resultVO = new ResultVO();

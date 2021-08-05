@@ -21,4 +21,5 @@ public interface SiteService {
 
    ResultVO update(Site site);
 
+   ResultVO search(String name);
 }

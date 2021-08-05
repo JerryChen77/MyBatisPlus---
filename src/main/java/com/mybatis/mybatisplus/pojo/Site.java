@@ -26,6 +26,16 @@ public class Site {
     private String siteName;
     private Integer userId;
 
-//    @TableField(exist = false)
-//    private List<Device> devices;
+    @TableField(select = false)
+    private Integer deviceId;
+    @TableField(select = false)
+    private String deviceName;
+    @TableField(select = false)
+    private Integer deviceStatus;
+    @TableField(select = false)
+    private String deviceType;
+
+
+
+
 }

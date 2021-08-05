@@ -7,9 +7,9 @@
         <select id="selectAllByUserId" resultType="com.mybatis.mybatisplus.pojo.Device" >
             SELECT d.device_id,d.device_name,d.device_status,d.device_type,d.site_id,s.site_name
              FROM
-             tb_device d INNER JOIN tb_site s
+             tb_device d LEFT JOIN tb_site s
              ON d.site_id = s.site_id
-            INNER JOIN tb_user u
+            LEFT JOIN tb_user u
             ON s.user_id = u.user_id
             WHERE u.user_id = #{userId}
         </select>

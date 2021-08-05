@@ -30,10 +30,16 @@ public class SiteController {
     //查询当前用户拥有的工地
     @RequestMapping("/sites/{userId}/{pageNum}/{pageSize}")
     @ResponseBody
-    public ResultVO findAll(@PathVariable("userId") Integer userId,
+    public ResultVO findAllByUserId(@PathVariable("userId") Integer userId,
                             @PathVariable("pageNum") Integer pageNum,
                             @PathVariable("pageSize") Integer pageSize){
         ResultVO resultVO = siteService.selectByUserId(userId,pageNum,pageSize);
+        return resultVO;
+    }
+    //查询所有的工地
+    @RequestMapping("/sites")
+    public ResultVO findAll(){
+        ResultVO resultVO = siteService.selectAll();
         return resultVO;
     }
 

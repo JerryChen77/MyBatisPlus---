@@ -13,4 +13,12 @@ public interface DeviceService {
 
     ResultVO findAllByUserId(Integer userId);
 
+    ResultVO findByDeviceId(Integer deviceId);
+
+    ResultVO update(Device device);
+
+    ResultVO add(Device device);
+
+    ResultVO delete(Integer deviceId);
+
 }
