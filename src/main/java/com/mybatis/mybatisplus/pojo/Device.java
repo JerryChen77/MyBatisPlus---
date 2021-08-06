@@ -28,8 +28,8 @@ public class Device {
     private Integer siteId;
 
     //对象中保存工地名称，用于在更新页面显示
-    @TableField(exist = false)
-    private String siteName;
+//    @TableField(exist = false)
+//    private String siteName;
 
 
 
